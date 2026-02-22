@@ -1,0 +1,33 @@
+John Smith
+Software Engineer
+
+Summary
+Results-oriented software engineer with 5 years of experience building scalable web applications. Passionate about leveraging cutting-edge technologies to drive innovation.
+
+Skills
+JavaScript, TypeScript, React, Node.js, Python, SQL, MongoDB, Docker, AWS, Git, REST, GraphQL, Agile, Scrum
+
+Experience
+Senior Software Engineer — TechCorp Inc.
+Jan 2021 - Present
+- Led development of customer-facing dashboard using React and TypeScript
+- Optimized database queries reducing load time by 40%
+- Mentored team of 3 junior developers
+
+Software Engineer — StartupXYZ
+Jun 2018 - Dec 2020
+- Built RESTful APIs using Node.js and Express
+- Implemented CI/CD pipeline with GitHub Actions
+- Collaborated with product team on feature prioritization
+
+Education
+Bachelor of Science in Computer Science
+University of Technology, 2018
+
+Projects
+E-commerce Platform: Full-stack online store with React, Node.js, and MongoDB
+Chat Application: Real-time messaging app using WebSockets and Redis
+Data Dashboard: Analytics dashboard with Python, Flask, and D3.js
+
+Certifications
+AWS Certified Developer - Associate

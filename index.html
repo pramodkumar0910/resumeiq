@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ResumeIQ — AI-Powered Resume Screening & Improvement</title>
+  <meta name="description" content="ResumeIQ uses AI to screen resumes for recruiters and help candidates improve their resumes with actionable suggestions.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script>
+    if (typeof pdfjsLib !== 'undefined') {
+      pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    }
+  </script>
+</head>
+<body>
+  <!-- ============ HEADER ============ -->
+  <header class="app-header" id="appHeader">
+    <div class="header-inner">
+      <div class="logo-container" id="logoHome">
+        <img src="assets/logo.svg" alt="ResumeIQ Logo" class="logo-img">
+      </div>
+      <nav class="header-nav" id="headerNav">
+        <button class="nav-btn" id="navBackBtn" style="display:none;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><polyline points="12 19 5 12 12 5"/></svg>
+          <span>Back</span>
+        </button>
+        <span class="mode-badge" id="modeBadge" style="display:none;"></span>
+      </nav>
+    </div>
+  </header>
+
+  <main class="app-main">
+    <!-- ============ ROLE SELECTION SCREEN ============ -->
+    <section class="view active" id="roleSelectionView">
+      <div class="hero-section">
+        <div class="hero-glow"></div>
+        <h1 class="hero-title">Intelligent Resume Analysis</h1>
+        <p class="hero-subtitle">AI-powered screening for recruiters. Smart improvement suggestions for candidates.</p>
+      </div>
+      <div class="role-cards-container">
+        <button class="role-card" id="recruiterCard" data-role="recruiter">
+          <div class="role-icon recruiter-icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+              <rect x="6" y="8" width="36" height="32" rx="4" stroke="currentColor" stroke-width="2.5"/>
+              <circle cx="24" cy="20" r="6" stroke="currentColor" stroke-width="2"/>
+              <path d="M14 34c0-5.523 4.477-10 10-10s10 4.477 10 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="36" cy="12" r="6" fill="#26d0ce" opacity="0.2"/>
+              <path d="M34 12h4M36 10v4" stroke="#26d0ce" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h2 class="role-title">Recruiter Mode</h2>
+          <p class="role-desc">Upload multiple resumes, input a job description, and get ranked candidates with match scores, skill breakdowns, and authenticity alerts.</p>
+          <div class="role-features">
+            <span class="feature-tag">Bulk Screening</span>
+            <span class="feature-tag">Ranking</span>
+            <span class="feature-tag">Authenticity Check</span>
+            <span class="feature-tag">Export Shortlist</span>
+          </div>
+          <div class="role-arrow">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><polyline points="12 5 19 12 12 19"/></svg>
+          </div>
+        </button>
+
+        <button class="role-card" id="candidateCard" data-role="candidate">
+          <div class="role-icon candidate-icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+              <rect x="10" y="4" width="28" height="36" rx="3" stroke="currentColor" stroke-width="2.5"/>
+              <line x1="16" y1="14" x2="32" y2="14" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
+              <line x1="16" y1="20" x2="32" y2="20" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
+              <line x1="16" y1="26" x2="28" y2="26" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
+              <path d="M28 32l4 4 8-8" stroke="#26d0ce" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="36" cy="36" r="10" fill="#26d0ce" opacity="0.1"/>
+            </svg>
+          </div>
+          <h2 class="role-title">Candidate Mode</h2>
+          <p class="role-desc">Upload your resume & optionally paste a target job description. Get actionable improvement suggestions to make your resume job-ready.</p>
+          <div class="role-features">
+            <span class="feature-tag">Skill Gap Analysis</span>
+            <span class="feature-tag">Improvement Tips</span>
+            <span class="feature-tag">Career Readiness</span>
+            <span class="feature-tag">Checklist Export</span>
+          </div>
+          <div class="role-arrow">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><polyline points="12 5 19 12 12 19"/></svg>
+          </div>
+        </button>
+      </div>
+      <div class="hero-features-bar">
+        <div class="hf-item"><span class="hf-icon">🧠</span> Explainable AI Scoring</div>
+        <div class="hf-item"><span class="hf-icon">🎯</span> Bias-Aware Analysis</div>
+        <div class="hf-item"><span class="hf-icon">🔍</span> Authenticity Detection</div>
+        <div class="hf-item"><span class="hf-icon">📊</span> Skill Gap Insights</div>
+      </div>
+    </section>
+
+    <!-- ============ RECRUITER MODE VIEW ============ -->
+    <section class="view" id="recruiterView">
+      <div class="workspace-container">
+        <div class="input-panel">
+          <h2 class="panel-title">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M12 8v8M8 12h8"/></svg>
+            Upload Resumes
+          </h2>
+          <div class="upload-zone" id="recruiterUploadZone">
+            <div class="upload-icon">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M28 4H12a4 4 0 0 0-4 4v32a4 4 0 0 0 4 4h24a4 4 0 0 0 4-4V16L28 4z"/>
+                <polyline points="28 4 28 16 40 16"/>
+                <line x1="24" y1="24" x2="24" y2="36"/>
+                <polyline points="18 30 24 24 30 30"/>
+              </svg>
+            </div>
+            <p class="upload-text">Drag & drop resumes here or <span class="upload-link">browse files</span></p>
+            <p class="upload-hint">Supports PDF and TXT • Multiple files allowed</p>
+            <input type="file" id="recruiterFileInput" multiple accept=".pdf,.txt" hidden>
+          </div>
+          <div class="file-list" id="recruiterFileList"></div>
+
+          <h2 class="panel-title" style="margin-top:1.5rem;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="8" y1="8" x2="16" y2="8"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="8" y1="16" x2="12" y2="16"/></svg>
+            Job Description
+          </h2>
+          <textarea class="jd-textarea" id="recruiterJD" placeholder="Paste the job description here... Include required skills, experience, qualifications, and any preferred attributes."></textarea>
+
+          <button class="analyze-btn" id="recruiterAnalyzeBtn" disabled>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <span>Analyze Resumes</span>
+            <div class="btn-shimmer"></div>
+          </button>
+        </div>
+
+        <!-- Recruiter Results Dashboard -->
+        <div class="results-panel" id="recruiterResults" style="display:none;">
+          <div class="results-header">
+            <h2 class="panel-title">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
+              Screening Results
+            </h2>
+            <button class="export-btn" id="downloadShortlistBtn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download Shortlist
+            </button>
+          </div>
+          <div class="results-summary" id="recruiterSummary"></div>
+          <div class="candidates-grid" id="candidatesGrid"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CANDIDATE MODE VIEW ============ -->
+    <section class="view" id="candidateView">
+      <div class="workspace-container">
+        <div class="input-panel">
+          <h2 class="panel-title">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M12 8v8M8 12h8"/></svg>
+            Upload Your Resume
+          </h2>
+          <div class="upload-zone" id="candidateUploadZone">
+            <div class="upload-icon">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M28 4H12a4 4 0 0 0-4 4v32a4 4 0 0 0 4 4h24a4 4 0 0 0 4-4V16L28 4z"/>
+                <polyline points="28 4 28 16 40 16"/>
+                <line x1="24" y1="24" x2="24" y2="36"/>
+                <polyline points="18 30 24 24 30 30"/>
+              </svg>
+            </div>
+            <p class="upload-text">Drag & drop your resume here or <span class="upload-link">browse files</span></p>
+            <p class="upload-hint">Supports PDF and TXT</p>
+            <input type="file" id="candidateFileInput" accept=".pdf,.txt" hidden>
+          </div>
+          <div class="file-list" id="candidateFileList"></div>
+
+          <h2 class="panel-title" style="margin-top:1.5rem;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="8" y1="8" x2="16" y2="8"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="8" y1="16" x2="12" y2="16"/></svg>
+            Target Job Description <span class="optional-label">(Optional)</span>
+          </h2>
+          <textarea class="jd-textarea" id="candidateJD" placeholder="Paste a target job description to get tailored improvement suggestions..."></textarea>
+
+          <button class="analyze-btn" id="candidateAnalyzeBtn" disabled>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <span>Analyze My Resume</span>
+            <div class="btn-shimmer"></div>
+          </button>
+        </div>
+
+        <!-- Candidate Results Dashboard -->
+        <div class="results-panel" id="candidateResults" style="display:none;">
+          <div class="results-header">
+            <h2 class="panel-title">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              Resume Analysis
+            </h2>
+            <button class="export-btn" id="downloadChecklistBtn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download Checklist
+            </button>
+          </div>
+          <div class="candidate-dashboard" id="candidateDashboard"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ LOADING OVERLAY ============ -->
+    <div class="loading-overlay" id="loadingOverlay" style="display:none;">
+      <div class="loading-content">
+        <div class="loading-spinner">
+          <div class="spinner-ring"></div>
+          <div class="spinner-brain">🧠</div>
+        </div>
+        <h3 class="loading-title">Analyzing Resumes...</h3>
+        <p class="loading-subtitle" id="loadingText">Extracting text and parsing skills</p>
+        <div class="loading-progress">
+          <div class="progress-bar" id="loadingProgressBar"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="app-footer">
+    <p>ResumeIQ — AI-Powered Resume Intelligence • Prototype Demo</p>
+  </footer>
+
+  <script src="js/parser.js"></script>
+  <script src="js/analyzer.js"></script>
+  <script src="js/authenticity.js"></script>
+  <script src="js/suggestions.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/export.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+Sarah Chen
+Data Scientist
+
+Summary
+Dynamic professional with a proven track record in data science and machine learning. Highly motivated self-starter committed to excellence in all aspects of data-driven decision making.
+
+Skills
+Python, R, Machine Learning, Deep Learning, TensorFlow, PyTorch, Pandas, NumPy, SQL, Tableau, Power BI, Statistics, Data Visualization, Natural Language Processing, Computer Vision, Spark, AWS, Docker, Kubernetes, Scikit-learn, Excel, Git
+
+Experience
+Data Scientist — DataDriven Analytics
+Mar 2022 - Present
+- Developed machine learning models for customer churn prediction
+- Created interactive dashboards using Tableau
+
+Junior Data Analyst — InfoCorp
+Jul 2020 - Feb 2022
+- Assisted with data cleaning and preprocessing
+- Helped create weekly reports
+
+Education
+Master of Science in Data Science
+State University, 2020
+
+Bachelor of Science in Mathematics
+City College, 2018
+
+Projects
+Sentiment Analysis Tool: NLP project using Python and BERT
+Image Classification: Computer vision model using TensorFlow and CNNs

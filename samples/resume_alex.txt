@@ -1,0 +1,16 @@
+Alex Rivera
+
+Skills
+Java, Spring Boot, Microservices, Kubernetes, Docker, AWS, Python, React, Angular, Vue, MongoDB, PostgreSQL, Redis, Kafka, Elasticsearch, GraphQL, Terraform, Jenkins, CI/CD, Agile, Machine Learning, Deep Learning, TensorFlow, Computer Vision, NLP, Blockchain, Solidity, Go, Rust, C++, Swift
+
+Experience
+Software Developer — WebTech Solutions
+Jan 2023 - Present
+- Worked on various projects using modern technologies
+- Participated in agile ceremonies and sprint planning
+- Contributed to team success through collaborative efforts
+
+Education
+Bachelor of Engineering in Computer Science
+Technical Institute, 2022
+

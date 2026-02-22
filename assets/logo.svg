@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 60" width="280" height="60">
+  <defs>
+    <linearGradient id="brainGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a2980"/>
+      <stop offset="100%" style="stop-color:#26d0ce"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#26d0ce"/>
+      <stop offset="100%" style="stop-color:#1a8a6e"/>
+    </linearGradient>
+  </defs>
+  <!-- Document/Brain icon -->
+  <g transform="translate(5,5)">
+    <!-- Document shape -->
+    <rect x="4" y="2" width="32" height="42" rx="4" fill="none" stroke="url(#brainGrad)" stroke-width="2.5"/>
+    <line x1="10" y1="36" x2="30" y2="36" stroke="#1a2980" stroke-width="1.5" opacity="0.3"/>
+    <line x1="10" y1="31" x2="30" y2="31" stroke="#1a2980" stroke-width="1.5" opacity="0.3"/>
+    <line x1="10" y1="26" x2="25" y2="26" stroke="#1a2980" stroke-width="1.5" opacity="0.3"/>
+    <!-- Brain/neural network overlay -->
+    <circle cx="20" cy="14" r="8" fill="none" stroke="url(#accentGrad)" stroke-width="1.8"/>
+    <path d="M16 11 Q20 8 24 11 M15 14 Q20 18 25 14 M17 17 Q20 14 23 17" fill="none" stroke="url(#brainGrad)" stroke-width="1.2"/>
+    <!-- Neural dots -->
+    <circle cx="14" cy="10" r="1.5" fill="#26d0ce"/>
+    <circle cx="26" cy="10" r="1.5" fill="#26d0ce"/>
+    <circle cx="14" cy="18" r="1.5" fill="#1a8a6e"/>
+    <circle cx="26" cy="18" r="1.5" fill="#1a8a6e"/>
+    <circle cx="20" cy="7" r="1.2" fill="#26d0ce"/>
+    <!-- Neural connections -->
+    <line x1="14" y1="10" x2="20" y2="7" stroke="#26d0ce" stroke-width="0.8" opacity="0.6"/>
+    <line x1="26" y1="10" x2="20" y2="7" stroke="#26d0ce" stroke-width="0.8" opacity="0.6"/>
+    <line x1="14" y1="18" x2="20" y2="14" stroke="#1a8a6e" stroke-width="0.8" opacity="0.6"/>
+    <line x1="26" y1="18" x2="20" y2="14" stroke="#1a8a6e" stroke-width="0.8" opacity="0.6"/>
+    <!-- Scan lines -->
+    <line x1="0" y1="20" x2="6" y2="20" stroke="#26d0ce" stroke-width="1" opacity="0.5"/>
+    <line x1="34" y1="20" x2="40" y2="20" stroke="#26d0ce" stroke-width="1" opacity="0.5"/>
+    <!-- Checkmark -->
+    <path d="M30 38 L33 41 L38 34" fill="none" stroke="#26d0ce" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <!-- Text: Resume -->
+  <text x="58" y="40" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="28" font-weight="600" fill="#1a2980" letter-spacing="-0.5">Resume</text>
+  <!-- Text: IQ (emphasized) -->
+  <text x="188" y="40" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="28" font-weight="800" fill="url(#accentGrad)" letter-spacing="-0.5">IQ</text>
+  <!-- Subtle circuit dots -->
+  <circle cx="218" cy="35" r="2" fill="#26d0ce" opacity="0.4"/>
+  <circle cx="226" cy="28" r="1.5" fill="#1a8a6e" opacity="0.3"/>
+  <line x1="218" y1="35" x2="226" y2="28" stroke="#26d0ce" stroke-width="0.8" opacity="0.3"/>
+</svg>
